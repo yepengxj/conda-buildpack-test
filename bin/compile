@@ -75,7 +75,7 @@ else
         $CONDA_BIN/pip install  -r "$BUILD_DIR/requirements.txt"
     fi
 fi
-#$CONDA_BIN/conda clean -pt
+$CONDA_BIN/conda clean -pt
 
 #
 echo "-----> Fixing paths..."
@@ -88,3 +88,4 @@ echo "export PATH=$HOME/app/.conda/bin:\$PATH" >> $PROFILE_PATH
 
 echo "-----> Finished compile step"
 echo `ls $HOME/app/.conda/bin`
+echo `ls $BUILD_DIR/.conda/bin`
