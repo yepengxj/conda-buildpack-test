@@ -19,6 +19,6 @@ cat <<EOF
 ---
 config_vars:
 default_process_types:
-  web: "/bin/bash ./test.sh
+  web: "/bin/bash ./test.sh"
 
 EOF
