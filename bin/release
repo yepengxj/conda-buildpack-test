@@ -19,6 +19,6 @@ cat <<EOF
 ---
 config_vars:
 default_process_types:
-  web: ".conda/bin/ipython notebook --port $PORT"
+  web: "./.conda/bin/ipython notebook --port $PORT"
 
 EOF
