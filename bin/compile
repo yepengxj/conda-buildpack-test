@@ -87,3 +87,4 @@ mkdir -p $(dirname $PROFILE_PATH)
 echo "export PATH=$HOME/app/.conda/bin:\$PATH" >> $PROFILE_PATH
 
 echo "-----> Finished compile step"
+echo `ls $HOME/app/.conda/bin`
