@@ -1,1 +1,1 @@
-env && ls -a
+env && ls -a ./.conda/bin/*
