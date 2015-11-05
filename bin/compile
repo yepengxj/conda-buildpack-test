@@ -68,11 +68,11 @@ else
     # No conda environment so use traditional requirements files.
     if [ -e "$BUILD_DIR/conda_requirements.txt" ]; then
         echo "-----> Installing conda packages from conda_requirements.txt..."
-        $CONDA_BIN/conda install --yes --quiet --file "$BUILD_DIR/conda_requirements.txt"
+        $CONDA_BIN/conda install --yes --file "$BUILD_DIR/conda_requirements.txt"
     fi
     if [ -e "$BUILD_DIR/requirements.txt" ]; then
         echo "-----> Installing pip packages from requirements.txt..."
-        $CONDA_BIN/pip install --quiet -r "$BUILD_DIR/requirements.txt"
+        $CONDA_BIN/pip install  -r "$BUILD_DIR/requirements.txt"
     fi
 fi
 $CONDA_BIN/conda clean -pt
