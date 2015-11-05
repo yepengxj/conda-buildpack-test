@@ -15,7 +15,7 @@
 # limitations under the License.
 #
 
-echo "-----> Starting compile step..."
+echo "-----> Starting compile step... $1 : $2 "
 BUILD_DIR=$1
 CACHE=$2
 
@@ -75,7 +75,7 @@ else
         $CONDA_BIN/pip install  -r "$BUILD_DIR/requirements.txt"
     fi
 fi
-$CONDA_BIN/conda clean -pt
+#$CONDA_BIN/conda clean -pt
 
 #
 echo "-----> Fixing paths..."
