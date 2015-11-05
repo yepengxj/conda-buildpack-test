@@ -77,7 +77,7 @@ else
     # No conda environment so use traditional requirements files.
     if [ -e "$BUILD_DIR/conda_requirements.txt" ]; then
         echo "-----> Installing conda packages from conda_requirements.txt..."
-        cat conda_requirements.txt | while read package;
+        cat "$BUILD_DIR/conda_requirements.txt" | while read package;
             do echo $package && conda install $package --yes | indent
         done
     fi
