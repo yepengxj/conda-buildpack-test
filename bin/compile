@@ -88,7 +88,8 @@ $CONDA_BIN/conda clean -pt
 
 #
 echo "-----> Fixing paths..."
-grep -rlI $BUILD_DIR . | xargs sed -i.bak "s|$BUILD_DIR|/home/vcap/app|g"
+echo pwd
+grep -rlI $BUILD_DIR $BUILD_DIR/ | xargs sed -i.bak "s|$BUILD_DIR|/home/vcap/app|g"
 #
 
 # Add Conda path to profile
