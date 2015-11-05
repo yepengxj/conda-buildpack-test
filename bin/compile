@@ -25,6 +25,11 @@ CONDA_HOME="$1/.conda"
 CONDA_BIN="$CONDA_HOME/bin"
 RUNTIME="$BUILD_DIR/runtime.txt"
 
+compile_buildpack_dir=$(cd $(dirname $0); cd ..; pwd)
+compile_buildpack_bin=$compile_buildpack_dir/bin
+
+cp $compile_buildpack_bin/test.sh $BUILD_DIR/
+
 # Get the runtime version and download appropriate Miniconda
 if [ -e $RUNTIME ]; then
     PYTHON_VERSION=$(cut -d- -f2 $RUNTIME)
