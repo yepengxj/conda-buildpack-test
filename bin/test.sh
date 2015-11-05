@@ -1,1 +1,1 @@
-echo "===pwd===" && pwd && env && ls -a ./.conda/bin/* && ./.conda/bin/ipython profile create && ./.conda/bin/ipython notebook --port=$VCAP_APP_PORT --ip=$VCAP_APP_HOST --no-mathjax
+echo "===pwd===" && pwd && env && ls -a ./.conda/bin/* && echo "create profile" &&./.conda/bin/ipython profile create && echo "ipython notebook" && ./.conda/bin/ipython notebook --port=$VCAP_APP_PORT --ip=$VCAP_APP_HOST --no-mathjax
