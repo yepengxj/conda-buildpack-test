@@ -1,1 +1,1 @@
-env && ls -a ./.conda/bin/*
+echo "===pwd===" && pwd && env && ls -a ./.conda/bin/*
