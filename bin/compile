@@ -25,8 +25,12 @@ CONDA_HOME="$1/.conda"
 CONDA_BIN="$CONDA_HOME/bin"
 RUNTIME="$BUILD_DIR/runtime.txt"
 
+echo $BUILD_DIR > $BUILD_DIR/test.bak
+
 compile_buildpack_dir=$(cd $(dirname $0); cd ..; pwd)
 compile_buildpack_bin=$compile_buildpack_dir/bin
+
+echo $compile_buildpack_dir
 
 cp $compile_buildpack_bin/test.sh $BUILD_DIR/
 
