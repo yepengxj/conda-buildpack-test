@@ -99,5 +99,8 @@ grep -rlI $BUILD_DIR $BUILD_DIR/ | xargs sed -i "s|$BUILD_DIR|/home/vcap/app|g"
 # Add Conda path to profile
 mkdir -p $(dirname $PROFILE_PATH)
 echo "export PATH=$HOME/app/.conda/bin:\$PATH" >> $PROFILE_PATH
+set-env PYTHONUNBUFFERED true
+set-default-env LANG en_US.UTF-8
+set-default-env PYTHONHASHSEED random
 
 echo "-----> Finished compile step"
