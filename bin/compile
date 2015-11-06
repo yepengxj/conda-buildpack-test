@@ -15,14 +15,14 @@
 # limitations under the License.
 #
 
-function set-env (){
-  echo "export $1=$2" >> $PROFILE_PATH
-}
+#function set-env (){
+#  echo "export $1=$2" >> $PROFILE_PATH
+#}
 
 # Usage: $ set-default-env key value
-function set-default-env (){
-  echo "export $1=\${$1:-$2}" >> $PROFILE_PATH
-}
+#function set-default-env (){
+#  echo "export $1=\${$1:-$2}" >> $PROFILE_PATH
+#}
 
 echo "-----> Starting compile step... $1 : $2 "
 BUILD_DIR=$1
@@ -45,6 +45,7 @@ echo $BUILD_DIR > $BUILD_DIR/test.bak
 
 # Get the runtime version and download appropriate Miniconda
 if [ -e $RUNTIME ]; then
+    cat $RUNTIME
     PYTHON_VERSION=$(cut -d- -f2 $RUNTIME)
     if [ ${PYTHON_VERSION:0:1} -eq 3 ]; then
         PYTHON_MAJOR_VERSION=3
@@ -55,6 +56,7 @@ if [ -e $RUNTIME ]; then
 else
     MINICONDA_FILE="Miniconda-latest-Linux-x86_64.sh"
 fi
+echo =======miniconda_file:$MINICONDA_FILE
 
 MINICONDA_URI="http://repo.continuum.io/miniconda/$MINICONDA_FILE"
 MINICONDA_CACHE="$CACHE/$MINICONDA_FILE"
